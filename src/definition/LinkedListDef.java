@@ -96,6 +96,21 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
         remove(ind);
     }
 
+    private int getindex(Node<Person> node) {
+        int index = 0;
+        Node<Person> nod = head;
+        for (int i = 0; i < size; i++) {
+            if (node.getData() == nod.getData()) {
+                break;
+            } else {
+                nod = nod.getNext();
+                index++;
+            }
+        }
+
+        return index;
+    }
+
 
     @Override
     public int search(Person item) {
