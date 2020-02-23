@@ -37,6 +37,8 @@ public class Main {
                 case 5:
                     System.out.println("exiting...");
                     break;
+                default:
+                    System.out.println("Oops! Invalid Number ! Enter the given number !");
             }
 
         }
