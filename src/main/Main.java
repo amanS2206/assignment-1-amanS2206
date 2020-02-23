@@ -26,7 +26,10 @@ public class Main {
                     System.out.println("-----------viewing all the elements---------");
                     h.print();
                     break;
-
+                case 3:
+                    System.out.println("You could search for a contact from their first names.");
+                    h.Search();
+                    break;
             }
 
         }
