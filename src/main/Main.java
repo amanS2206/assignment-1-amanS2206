@@ -30,6 +30,10 @@ public class Main {
                     System.out.println("You could search for a contact from their first names.");
                     h.Search();
                     break;
+                case 4:
+                    System.out.println("Here all your contacts");
+                    h.delete();
+                    break;
             }
 
         }
