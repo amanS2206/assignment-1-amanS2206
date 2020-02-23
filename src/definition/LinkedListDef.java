@@ -131,13 +131,52 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
 
     @Override
     public void print() {
-
+        System.out.print("[");
+        for (int i = 0; i < size; i++) {
+            // fetch the data for the current node
+            Person data = this.getNode(i).getData();
+            System.out.print(data + (i < size - 1 ? ", " : ""));
+        }
+        System.out.println("]");
     }
 
     private void swap(Node<E> firstNode, Node<E> secondNode) {
         Node<E> temp = firstNode;
         firstNode = secondNode;
         secondNode = temp;
+    }
+
+
+    public LinkedListDef<Person> sort(LinkedListDef<Person> list) {
+        Node<Person> current = head;
+        Node<Person> index = null;
+        int status;
+        if (head == null) {
+            return list;
+        } else {
+            while (current != null) {
+                index = current.next;
+                while (index != null) {
+
+                    status = current.data.getFirst_Name().compareToIgnoreCase(index.data.getFirst_Name());
+
+                    if (status > 0) {
+                        Person temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                        index = index.next;
+
+                    } else {
+
+                        index = index.next;
+                    }
+
+
+                }
+                current = current.next;
+            }
+        }
+        return list;
     }
 
     @Override
