@@ -90,7 +90,7 @@ public class Helper {
         System.out.println("Press the number against the contact to delete it:");
         int del = sc.nextInt();
         Person ob = list.remove(del - 1);
-        System.out.println(ob.getFirst_Name() + " " + ob.getLast_Name() + "'s deleted from list.");
+        System.out.println(ob.getFirst_Name() + " " + ob.getLast_Name() + "'s contact  deleted from list.");
     }
 }
 
