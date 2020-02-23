@@ -44,8 +44,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "-------- * -------- * -------- * --------"+"\n"+
-                "First Name : " +  First_Name + "\n" + "Last Name : " + Last_Name +"\n"+ " ContactNumber: " + arr.toString() +"\n"+"Email Address : " + email + "\n"+
+        return "-------- * -------- * -------- * --------" + "\n" +
+                "First Name : " + First_Name + "\n" + "Last Name : " + Last_Name + "\n" + "ContactNumber: " + arr.toString() + "\n" + "Email Address : " + email + "\n" +
                 "-------- * -------- * -------- * --------";
     }
 }
