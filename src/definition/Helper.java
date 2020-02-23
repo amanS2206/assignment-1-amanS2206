@@ -57,4 +57,29 @@ public class Helper {
         }
     }
 
+
+    public void Search() {
+        int count = 0;
+        boolean response = false;
+        LinkedListDef<Person> l1 = new LinkedListDef<Person>();
+        System.out.println("Enter the first name of contact:");
+        String search = sc.nextLine();
+        for (Person obj : list) {
+            if (obj.getFirst_Name().equals(search)) {
+                count++;
+                l1.add(obj);
+                response = true;
+            }
+        }
+        if (response != true) {
+            System.out.println("Match does not found !");
+        } else {
+            System.out.println(count + " Match Found ! ");
+            for (Person ob : l1) {
+                System.out.println(ob);
+            }
+        }
+    }
+
+
 }
