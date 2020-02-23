@@ -181,8 +181,28 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new java.util.Iterator<E>() {
+            private LinkedListDef.Node<Person> trav = head;
+
+            @Override
+            public boolean hasNext() {
+                return trav != null;
+            }
+
+            @Override
+            public E next() {
+                E data = (E) trav.data;
+                trav = trav.next;
+                return data;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
     }
+
 
     private static class Node<E> {
         private E data;
