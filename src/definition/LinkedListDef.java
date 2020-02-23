@@ -46,6 +46,57 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
         add(size, item);
     }
 
+
+    private Person removeFirst() {
+        Person response = null;
+        Node<Person> temp = head;
+        if (head != null) {
+            head = head.getNext();
+        }
+        if (temp != null) {
+            size--;
+            response = temp.getData();
+        }
+        return response;
+    }
+
+    private Person removeAfter(Node<Person> node) {
+        Person response = null;
+        Node<Person> temp = node.getNext();
+        if (temp != null) {
+            node.next = temp.getNext();
+            size--;
+            response = temp.getData();
+        }
+        return response;
+    }
+
+
+    public Person remove(int index) {
+        Person response = null;
+
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) {
+            response = removeFirst();
+        } else {
+            Node<Person> previousNode = getNode(index - 1);
+            response = removeAfter(previousNode);
+        }
+        return response;
+    }
+
+    @Override
+    public void remove() {
+        remove(size);
+    }
+
+    public void remove(Person ob) {
+        int ind = search(ob);
+        remove(ind);
+    }
+
+
     @Override
     public int search(Person item) {
         return 0;

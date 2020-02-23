@@ -10,4 +10,6 @@ public interface LinkedListADTInterface<E> {
 
 
     void print();
+
+    void remove();
 }
