@@ -107,7 +107,6 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
                 index++;
             }
         }
-
         return index;
     }
 
