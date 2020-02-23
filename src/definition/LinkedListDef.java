@@ -9,6 +9,16 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
     private Node<Person> head = null;
 
 
+    private Node<Person> getNode(int index) {
+        Node<Person> response = head;
+
+        for (int i = 0; i < index; i++) {
+            response = response.getNext();
+        }
+        return response;
+    }
+
+    
     @Override
     public void add(Person item) {
 
