@@ -34,6 +34,9 @@ public class Main {
                     System.out.println("Here all your contacts");
                     h.delete();
                     break;
+                case 5:
+                    System.out.println("exiting...");
+                    break;
             }
 
         }
