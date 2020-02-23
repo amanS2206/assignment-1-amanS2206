@@ -22,7 +22,10 @@ public class Main {
                     System.out.println("You have chosen to add a new contact: ");
                     h.add();
                     break;
-
+                case 2:
+                    System.out.println("-----------viewing all the elements---------");
+                    h.print();
+                    break;
 
             }
 
