@@ -24,10 +24,26 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
         size++;
     }
 
+    private void addAfter(Node<Person> node, Person item) {
+        node.next = new Node<>(item, node.next);
+        size++;
+    }
+
+    public void add(int index, Person item) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) {
+            addFirst(item);
+        } else {
+            Node<Person> temp = getNode(index - 1);
+            addAfter(temp, item);
+        }
+    }
+
 
     @Override
     public void add(Person item) {
-
+        add(size, item);
     }
 
     @Override
