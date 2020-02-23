@@ -40,6 +40,9 @@ public class Main {
                 default:
                     System.out.println("Oops! Invalid Number ! Enter the given number !");
             }
+            if (choose == 5) {
+                choice = false;
+            }
 
         }
     }
