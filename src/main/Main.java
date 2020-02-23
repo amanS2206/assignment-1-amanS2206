@@ -18,6 +18,11 @@ public class Main {
             System.out.println("Press 5 to exit program ");
             int choose = sc.nextInt();
             switch (choose) {
+                case 1:
+                    System.out.println("You have chosen to add a new contact: ");
+                    h.add();
+                    break;
+
 
             }
 
