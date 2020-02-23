@@ -50,4 +50,11 @@ public class Helper {
         System.out.println(list.size);
     }
 
+    public void print() {
+
+        for (Person j : list) {
+            System.out.println(j);
+        }
+    }
+
 }
