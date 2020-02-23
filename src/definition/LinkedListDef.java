@@ -112,14 +112,32 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
     }
 
 
+
     @Override
     public int search(Person item) {
-        return 0;
+        int response = -1;
+
+        for (int i = 0; i < size; i++) {
+
+            Person data = this.getNode(i).getData();
+
+            if (item.equals(data)) {
+                response = i;
+                break;
+            }
+        }
+        return response;
     }
 
     @Override
     public void print() {
 
+    }
+
+    private void swap(Node<E> firstNode, Node<E> secondNode) {
+        Node<E> temp = firstNode;
+        firstNode = secondNode;
+        secondNode = temp;
     }
 
     @Override
