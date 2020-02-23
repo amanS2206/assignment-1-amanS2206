@@ -18,7 +18,13 @@ public class LinkedListDef<E> implements LinkedListADTInterface<E>, Iterable<E> 
         return response;
     }
 
-    
+
+    private void addFirst(Person item) {
+        head = new Node<Person>(item, head);
+        size++;
+    }
+
+
     @Override
     public void add(Person item) {
 
