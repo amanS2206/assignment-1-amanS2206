@@ -17,6 +17,9 @@ public class Main {
             System.out.println("Press 4 to delete a contact");
             System.out.println("Press 5 to exit program ");
             int choose = sc.nextInt();
+            switch (choose) {
+
+            }
 
         }
     }
