@@ -4,11 +4,10 @@ import java.util.Scanner;
 public class Helper {
     LinkedListDef<Person> list = new LinkedListDef<>();
     Scanner sc = new Scanner(System.in);
-    public static int count = 0;
+
 
     public void add() {
         String s3;
-        count = 0;
         boolean option = true;
         boolean op1 = true;
         Person p = new Person();
@@ -21,7 +20,6 @@ public class Helper {
         System.out.print("Contact Number : ");
         String n = sc.nextLine();
         arr = arr + n;
-        count++;
         while (op1) {
             System.out.println("would you like to add another contact number: y/n");
             String con = sc.nextLine();
@@ -29,7 +27,6 @@ public class Helper {
                 System.out.print("Contact Number : ");
                 n = sc.nextLine();
                 arr = arr + ", " + n;
-                count++;
                 op1 = true;
             } else {
                 op1 = false;
@@ -49,6 +46,7 @@ public class Helper {
         p.setEmail(s3);
         list.add(p);
         list.sort(list);
+
     }
 
     public void print() {

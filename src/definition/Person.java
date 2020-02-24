@@ -41,7 +41,7 @@ public class Person {
 
     @Override
     public String toString() {
-        if (Helper.count == 1) {
+        if (arr.length() <= 10) {
             return "-------- * -------- * -------- * --------" + "\n" +
                     "First Name : " + First_Name + "\n" + "Last Name : " + Last_Name + "\n" + "Contact Number: " + arr + "\n" + "Email Address : " + email + "\n" +
                     "-------- * -------- * -------- * --------";
