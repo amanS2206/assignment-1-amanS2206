@@ -21,7 +21,7 @@ public class Helper {
         String n = sc.nextLine();
         arr = arr + n;
         while (op1) {
-            System.out.println("would you like to add another contact number: y/n");
+            System.out.print("would you like to add another contact number (y/n) : ");
             String con = sc.nextLine();
             if (con.equals("y")) {
                 System.out.print("Contact Number : ");
@@ -32,7 +32,7 @@ public class Helper {
                 op1 = false;
             }
         }
-        System.out.println("Would you like to enter the email addresss:y/n");
+        System.out.print("Would you like to enter the email addresss (y/n) : ");
         String inq = sc.nextLine();
         if (inq.equals("y")) {
             System.out.print("Enter the email address : ");
