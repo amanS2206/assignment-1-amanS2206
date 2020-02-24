@@ -46,7 +46,6 @@ public class Helper {
         p.setEmail(s3);
         list.add(p);
         list.sort(list);
-
     }
 
     public void print() {
@@ -62,39 +61,48 @@ public class Helper {
 
 
     public void Search() {
-        int count = 0;
-        boolean response = false;
-        LinkedListDef<Person> l1 = new LinkedListDef<Person>();
-        System.out.println("Enter the first name of contact:");
-        String search = sc.nextLine();
-        for (Person obj : list) {
-            if (obj.getFirst_Name().equals(search)) {
-                count++;
-                l1.add(obj);
-                response = true;
+        if (list.size > 0) {
+            int count = 0;
+            boolean response = false;
+            LinkedListDef<Person> l1 = new LinkedListDef<Person>();
+            System.out.println("Enter the first name of contact:");
+            String search = sc.nextLine();
+            for (Person obj : list) {
+                if (obj.getFirst_Name().equals(search)) {
+                    count++;
+                    l1.add(obj);
+                    response = true;
+                }
             }
-        }
-        if (response != true) {
-            System.out.println("Match does not found !");
+            if (response != true) {
+                System.out.println("Match does not found !");
+            } else {
+                System.out.println(count + " Match Found ! ");
+                for (Person ob : l1) {
+                    System.out.println(ob);
+                }
+            }
         } else {
-            System.out.println(count + " Match Found ! ");
-            for (Person ob : l1) {
-                System.out.println(ob);
-            }
+            System.out.println("EMPTY CONTACT LIST ! Please add Some New Contacts");
         }
     }
 
     public void delete() {
-        int count = 1;
-        for (Person ob : list) {
-            System.out.println(count + ". " + ob.getFirst_Name() + " " + ob.getLast_Name());
-            count++;
+        if (list.size > 0) {
+            int count = 1;
+            for (Person ob : list) {
+                System.out.println(count + ". " + ob.getFirst_Name() + " " + ob.getLast_Name());
+                count++;
+            }
+            System.out.println("Press the number against the contact to delete it:");
+            int del = sc.nextInt();
+            sc.nextLine();
+            Person ob = list.remove(del - 1);
+            System.out.println(ob.getFirst_Name() + " " + ob.getLast_Name() + "'s contact  deleted from list.");
+        } else {
+            System.out.println("CONTACT LIST IS EMPTY !!");
         }
-        System.out.println("Press the number against the contact to delete it:");
-        int del = sc.nextInt();
-        sc.nextLine();
-        Person ob = list.remove(del - 1);
-        System.out.println(ob.getFirst_Name() + " " + ob.getLast_Name() + "'s contact  deleted from list.");
+
     }
 }
 
