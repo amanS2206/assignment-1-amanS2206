@@ -1,18 +1,18 @@
 package definition;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Helper {
     LinkedListDef<Person> list = new LinkedListDef<>();
     Scanner sc = new Scanner(System.in);
+    public static int count = 0;
 
     public void add() {
         String s3;
+        count = 0;
         boolean option = true;
         boolean op1 = true;
         Person p = new Person();
-        ArrayList<String> arr = new ArrayList<>();
+        String arr = "";
         System.out.println("Please enter the name of the Person:");
         System.out.print("First Name : ");
         String s = sc.nextLine();
@@ -20,14 +20,16 @@ public class Helper {
         String s1 = sc.nextLine();
         System.out.print("Contact Number : ");
         String n = sc.nextLine();
-        arr.add(n);
+        arr = arr + n;
+        count++;
         while (op1) {
             System.out.println("would you like to add another contact number: y/n");
             String con = sc.nextLine();
             if (con.equals("y")) {
                 System.out.print("Contact Number : ");
                 n = sc.nextLine();
-                arr.add(n);
+                arr = arr + ", " + n;
+                count++;
                 op1 = true;
             } else {
                 op1 = false;
@@ -47,14 +49,17 @@ public class Helper {
         p.setEmail(s3);
         list.add(p);
         list.sort(list);
-        System.out.println(list.size);
     }
 
     public void print() {
-
-        for (Person j : list) {
-            System.out.println(j);
+        if (list.size == 0) {
+            System.out.println("EMPTY CONTACT LIST ! Please add Some New Contacts");
+        } else {
+            for (Person j : list) {
+                System.out.println(j);
+            }
         }
+
     }
 
 

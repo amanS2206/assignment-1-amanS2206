@@ -1,13 +1,11 @@
 package definition;
 
-import java.util.ArrayList;
-
 public class Person {
-    private String First_Name ;
+    int count;
     private String Last_Name;
-    private ArrayList<String> arr;
+    private String First_Name;
     private String email;
-
+    private String arr;
     public String getFirst_Name() {
         return First_Name;
     }
@@ -24,11 +22,11 @@ public class Person {
         this.email = email;
     }
 
-    public ArrayList<String>  getContact_number() {
+    public String getContact_number() {
         return arr;
     }
 
-    public void setContact_number(ArrayList<String> arr) {
+    public void setContact_number(String arr) {
         this.arr = arr;
     }
 
@@ -41,16 +39,15 @@ public class Person {
     }
 
 
-
     @Override
     public String toString() {
-        if (arr.size() == 1) {
+        if (Helper.count == 1) {
             return "-------- * -------- * -------- * --------" + "\n" +
-                    "First Name : " + First_Name + "\n" + "Last Name : " + Last_Name + "\n" + "ContactNumber: " + arr.toString() + "\n" + "Email Address : " + email + "\n" +
+                    "First Name : " + First_Name + "\n" + "Last Name : " + Last_Name + "\n" + "Contact Number: " + arr + "\n" + "Email Address : " + email + "\n" +
                     "-------- * -------- * -------- * --------";
         } else {
             return "-------- * -------- * -------- * --------" + "\n" +
-                    "First Name : " + First_Name + "\n" + "Last Name : " + Last_Name + "\n" + "ContactNumber(s): " + arr.toString() + "\n" + "Email Address : " + email + "\n" +
+                    "First Name : " + First_Name + "\n" + "Last Name : " + Last_Name + "\n" + "Contact Number(s): " + arr + "\n" + "Email Address : " + email + "\n" +
                     "-------- * -------- * -------- * --------";
         }
 
